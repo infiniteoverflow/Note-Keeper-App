@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notekeeper/screens/notes_details.dart';
 import 'package:notekeeper/screens/notes_list.dart';
 
 void main() => runApp(
@@ -9,7 +8,7 @@ void main() => runApp(
     theme: ThemeData(
       backgroundColor: Colors.orange,
     ),
-    home: NotesDetails(),
+    home: NotesList(),
   )
 );
 

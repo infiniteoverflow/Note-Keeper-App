@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 
 class NotesDetails extends StatefulWidget {
+
+  String title = ' ';
+
+  NotesDetails(String title) {
+    this.title = title;
+  }
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return NotesDetailsState();
+    return NotesDetailsState(this.title);
   }
 
 }
@@ -13,6 +20,12 @@ class NotesDetailsState extends State<NotesDetails> {
 
   var _priority = ['High','Low'];
   var currentPriority = "Low";
+  var title = " ";
+
+  NotesDetailsState(String title) {
+    this.title = title;
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -20,7 +33,7 @@ class NotesDetailsState extends State<NotesDetails> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
         title: Text(
-          "Edit Notes"
+          title
         ),
       ),
       body: Container(

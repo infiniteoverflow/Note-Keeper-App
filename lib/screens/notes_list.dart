@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:notekeeper/screens/notes_details.dart';
+
 
 class NotesList extends StatefulWidget {
   @override
@@ -16,7 +18,22 @@ class NotesListState extends State<NotesList> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return getList();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Notes List"
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return NotesDetails("Add Note");
+          }));
+        },
+      ),
+      body: getList(),
+    );
   }
 
   ListView getList() {
@@ -38,6 +55,11 @@ class NotesListState extends State<NotesList> {
               "Have to submit assignment"
             ),
             trailing: Icon(Icons.delete),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return NotesDetails("Edit Note");
+              }));
+            },
           ),
         );
       },
