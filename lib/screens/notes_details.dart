@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:notekeeper/models/notes.dart';
 import 'package:notekeeper/utils/database_helper.dart';
-import 'package:sqflite/sqflite.dart';
 
 
 class NoteDetail extends StatefulWidget {
@@ -223,8 +222,6 @@ class NoteDetailState extends State<NoteDetail> {
 	// Save data to database
 	void _save() async {
 
-		moveToLastScreen();
-
 		note.date = DateFormat.yMMMd().format(DateTime.now());
 		int result;
 		if (note.id != null) {  // Case 1: Update operation
@@ -232,6 +229,8 @@ class NoteDetailState extends State<NoteDetail> {
 		} else { // Case 2: Insert Operation
 			result = await helper.insertNote(note);
 		}
+
+    moveToLastScreen();
 
 		if (result != 0) {  // Success
 			_showAlertDialog('Status', 'Note Saved Successfully');
