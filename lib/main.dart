@@ -8,7 +8,7 @@ void main() => runApp(
     theme: ThemeData(
       backgroundColor: Colors.orange,
     ),
-    home: NotesList(),
+    home: NoteList(),
   )
 );
 
