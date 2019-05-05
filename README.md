@@ -1,7 +1,7 @@
 # Note-Keeper-App
 A flutter app that uses the SQLite database for storing notes.
 
-![](./screenshots/screen1.png)
-![](./screenshots/screen2.png)
-![](./screenshots/screen3.png)
-![](./screenshots/screen4.png)
+<img src="./screenshots/screen1.png" width="250"/>
+<img src="./screenshots/screen2.png" width="250"/>
+<img src="./screenshots/screen3.png" width="250"/>
+<img src="./screenshots/screen4.png" width="250"/>
